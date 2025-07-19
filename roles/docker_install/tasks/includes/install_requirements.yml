@@ -1,0 +1,10 @@
+
+- name: Install required packages
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg2
+      - software-properties-common
+  when: ansible_os_family == 'Debian'

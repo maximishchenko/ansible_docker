@@ -1,0 +1,13 @@
+---
+- name: Upgrade packages
+  ansible.builtin.include_tasks: includes/upgrade_packages.yml
+- name: Install requirements
+  ansible.builtin.include_tasks: includes/install_requirements.yml
+- name: Add Docker GPG key
+  ansible.builtin.include_tasks: includes/add_gpg_key.yml
+- name: Add Docker repository
+  ansible.builtin.include_tasks: includes/add_repository.yml
+- name: Add Docker engine
+  ansible.builtin.include_tasks: includes/install_docker_engine.yml
+- name: Add user Docker group
+  ansible.builtin.include_tasks: includes/add_user_to_docker_group.yml

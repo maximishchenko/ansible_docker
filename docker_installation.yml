@@ -1,0 +1,13 @@
+---
+- name: Install Docker host
+  hosts: all
+  become: true
+  
+  tasks:
+    - name: Include docker_install role
+      include_role:
+        name: docker_install
+        #roles:
+        #- role: docker_install
+    #vars_files:
+    #- "./roles/backup/vars/export-action-defaults.yml"

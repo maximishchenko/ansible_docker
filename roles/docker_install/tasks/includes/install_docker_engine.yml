@@ -1,0 +1,7 @@
+- name: Install Docker Engine
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+  when: ansible_os_family == 'Debian'
