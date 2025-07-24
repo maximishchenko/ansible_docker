@@ -9,5 +9,3 @@
   ansible.builtin.include_tasks: includes/add_repository.yml
 - name: Add Docker engine
   ansible.builtin.include_tasks: includes/install_docker_engine.yml
-- name: Add user Docker group
-  ansible.builtin.include_tasks: includes/add_user_to_docker_group.yml

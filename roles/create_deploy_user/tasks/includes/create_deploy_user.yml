@@ -1,0 +1,9 @@
+- name: Create deploy user
+  user:
+    name: deploy
+    password: '!'
+    groups:
+      - docker
+      - sudo
+    shell: /bin/bash
+    state: present

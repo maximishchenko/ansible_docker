@@ -1,0 +1,5 @@
+---
+- name: Create deploy user
+  ansible.builtin.include_tasks: includes/create_deploy_user.yml
+- name: Add ssh-key
+  ansible.builtin.include_tasks: includes/add_ssh_key.yml
