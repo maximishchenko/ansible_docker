@@ -1,5 +1,13 @@
-docker-install:
+default: help
+
+.PHONY: help
+help: # Show help for each of the Makefile recipes.
+	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
+
+.PHONY: docker-install
+docker-install: # Playbook for Docker installation on managed servers.
 	ansible-playbook -i inventory/inventory.ini docker_installation.yml
 
-deploy-user:
+.PHONY: deploy-user
+deploy-user: # Playbook for create user to deploy
 	ansible-playbook -i inventory/inventory.ini create_deploy_user.yml
