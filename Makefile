@@ -1,3 +1,5 @@
+INVENTORY ?= inventory/inventory.cfg
+
 default: help
 
 .PHONY: help
@@ -6,8 +8,5 @@ help: # Show help for each of the Makefile recipes.
 
 .PHONY: docker-install
 docker-install: # Playbook for Docker installation on managed servers.
-	ansible-playbook -i inventory/inventory.ini docker_installation.yml
+	ansible-playbook -i $(INVENTORY) docker_installation.yml
 
-.PHONY: deploy-user
-deploy-user: # Playbook for create user to deploy
-	ansible-playbook -i inventory/inventory.ini create_deploy_user.yml
