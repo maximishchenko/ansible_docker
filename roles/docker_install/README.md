@@ -1,7 +1,11 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Setup Docker host:
+
+- Docker Installation
+- Add deployment user to Docker group
+- Set periodic prune
 
 Requirements
 ------------
